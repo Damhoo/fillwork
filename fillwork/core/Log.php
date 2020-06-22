@@ -1,6 +1,8 @@
 <?php
 namespace fillwork\core;
 
+!defined('XDE') && exit('Access Denied');
+
 final class Log{
 	final private function __construct() {}
 	final private function __clone() {}

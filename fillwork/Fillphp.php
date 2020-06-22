@@ -1,6 +1,8 @@
 <?php
 namespace fillwork;
 
+!defined('XDE') && exit('Access Denied');
+
 use fillwork\core\App;
 
 final class Fillphp{
@@ -14,11 +16,7 @@ final class Fillphp{
 		// 创建APP文件夹
 		self::_create_folder();
 		// 执行APP应用类
-		try{
-			App::run();
-		}catch(Exception $e) {
-			print_r($e);
-		}
+		App::run();
 	}
 
 	// 调试功能
@@ -47,6 +45,7 @@ final class Fillphp{
 		define('APP_CONTROLLER_PATH', APP_PATH.'/controller');
 		define('APP_MODEL_PATH', APP_PATH.'/model');
 		define('APP_VIEW_PATH', APP_PATH.'/view');
+		define('APP_VIEW_COMMON_PATH', APP_VIEW_PATH.'/common');
 		define('APP_CONFIG_PATH', APP_PATH.'/config');
 
 		// APP公共常量
@@ -61,6 +60,7 @@ final class Fillphp{
 			APP_CONTROLLER_PATH,
 			APP_MODEL_PATH,
 			APP_VIEW_PATH,
+			APP_VIEW_COMMON_PATH,
 			APP_CONFIG_PATH,
 			APP_COMMON_PATH,
 			APP_COMMON_MODEL_PATH,

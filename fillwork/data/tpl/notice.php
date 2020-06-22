@@ -1,3 +1,4 @@
+<?php !defined('XDE') && exit('Access Denied'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +14,14 @@ body,h1,h2,h3,h4,h5,div{padding:0;margin:0;}
 </style>
 <body>
 <div class="err-box">
+	<?php if(APP_DEBUG): ?>
 	<h2>Notice Tip</h2>
 	<h3>Error: <?php echo $errmsg; ?></h3>
 	<h3>File: <?php echo $errfile; ?></h3>
 	<h3>Line: <?php echo $errline; ?></h3>
+	<?php else: ?>
+	<h3><?php echo $e['message']; ?></h3>
+	<?php endif ?>
 </div>
 </body>
 </html>

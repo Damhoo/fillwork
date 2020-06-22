@@ -1,6 +1,8 @@
 <?php
 namespace fillwork\core;
 
+!defined('XDE') && exit('Access Denied');
+
 use fillwork\db\Sql;
 
 class Model extends Sql{

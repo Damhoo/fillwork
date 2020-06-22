@@ -1,3 +1,4 @@
+<?php !defined('XDE') && exit('Access Denied'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 body{font-family: "Microsoft YaHei",'楷体';}
 body,h1,div,h2,h3,h4,h5,h6,p{padding: 0;margin:0;}
 .error{padding: 0 2rem;}
-.error h1{font-size: 10rem;font-weight: normal;}
+.error h1{font-size: 7rem;font-weight: normal;}
 .error .trace{margin-top: 1rem;}
 </style>
 </head>
@@ -25,7 +26,7 @@ body,h1,div,h2,h3,h4,h5,h6,p{padding: 0;margin:0;}
 		<?php echo nl2br($e['trace']); ?>
 	</div>
 	<?php else: ?>
-	<div class="msg"><?php echo $e['message']; ?></div>
+	<div class="msg"><h3><?php echo $e['message']; ?></h3></div>
 	<?php endif ?>
 </div>
 </body>

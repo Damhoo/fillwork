@@ -1,9 +1,12 @@
 <?php
-namespace app\index\controller;
+namespace app\controller;
 
-class Index {
-	public function __construct(){}
+!defined('XDE') && exit('Access Denied');
+
+use fillwork\core\Controller;
+
+class Index extends Controller{
 	public function index() {
-		echo '<h1>:)</h1><h2>Welcome to use my Framework!</h2>';
+		echo '<style>h1,h2{padding:0;margin:0;}h1{font-size:7rem;}</style><h1>:)</h1><h2>Welcome to use my Framework!</h2>';
 	}
 }

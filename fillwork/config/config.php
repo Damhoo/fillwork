@@ -1,4 +1,5 @@
 <?php
+!defined('XDE') && exit('Access Denied');
 return [
 	// 默认时区
 	'DEFAULT_TIMEZONE' => 'PRC',

@@ -1,6 +1,8 @@
 <?php
 namespace fillwork\core;
 
+!defined('XDE') && exit('Access Denied');
+
 class Controller {
 	protected $_controller = null;
 	protected $_action = null;

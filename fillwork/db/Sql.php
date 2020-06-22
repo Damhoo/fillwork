@@ -1,6 +1,8 @@
 <?php
 namespace fillwork\db;
 
+!defined('XDE') && exit('Access Denied');
+
 use \PDOStatement;
 use fillwork\core\Config;
 

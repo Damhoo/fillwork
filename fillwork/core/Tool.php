@@ -1,6 +1,8 @@
 <?php
 namespace fillwork\core;
 
+!defined('XDE') && exit('Access Denied');
+
 class Tool{
 	public static function dump($var) {
 		if (is_string($var)) {
@@ -44,6 +46,16 @@ class Tool{
 		}
 		include TPL_PATH.'/halt.php';
 		die;
+	}
+
+	// 普通错误提示
+	public static function tip($errmsg, $errfile, $errline) {
+		if (APP_DEBUG) {
+			include TPL_PATH.'/notice.php';
+			die;
+		} else {
+			self::halt($errmsg);
+		}
 	}
 
 	// 跳转函数

@@ -1,6 +1,8 @@
 <?php
 namespace fillwork\core;
 
+!defined('XDE') && exit('Access Denied');
+
 class View{
 	protected $vars = null;
 	protected $_controller = null;

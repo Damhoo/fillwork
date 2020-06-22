@@ -1,6 +1,8 @@
 <?php
 namespace fillwork\core;
 
+!defined('XDE') && exit('Access Denied');
+
 class Config{
 	public static function get($var=null, $value=null) {
 		static $config = [];

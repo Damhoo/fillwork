@@ -1,6 +1,8 @@
 <?php
 namespace fillwork\core;
 
+!defined('XDE') && exit('Access Denied');
+
 use fillwork\core\Tool;
 use Exception;
 
@@ -52,8 +54,6 @@ final class App{
 	// 捕获一般错误
 	public static function _error($errno, $errmsg, $errfile, $errline) {
 		switch ($errno) {
-			case E_STRICT:
-			case E_WARNING:
 			case E_NOTICE:
 			case E_USER_ERROR:
 			case E_USER_WARNING:
@@ -61,11 +61,13 @@ final class App{
 			case E_USER_DEPRECATED:
 			case E_COMPILE_WARNING:
 			case E_COMPILE_ERROR:
-				include TPL_PATH.'/notice.php';
+				Tool::tip($errmsg, $errfile, $errline);
 				break;
 
 			case E_PARSE:
 			case E_ERROR:
+			case E_STRICT:
+			case E_WARNING:
 			case E_CORE_ERROR:
 			case E_CORE_WARNING:
 			case E_COMPILE_ERROR:
