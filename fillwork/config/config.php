@@ -29,10 +29,10 @@ return [
 		'HOST' => 'localhost',
 		'PORT' => '3306',
 		'USER' => 'root',
-		'PASSWORD' => 'root',
-		'DBNAME' => 'help',
+		'PASSWORD' => '',
+		'DBNAME' => '',
 		'CHARSET' => 'utf8',
-		'PREFIX' => 'fw_'
+		'PREFIX' => ''
 	],
 
 	// 验证码参数

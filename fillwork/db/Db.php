@@ -11,8 +11,8 @@ final class Db{
 		'port' => '3306',
 		'host' => 'localhost',
 		'user' => 'root',
-		'pass' => 'root',
-		'dbname' => 'help',
+		'pass' => '',
+		'dbname' => '',
 		'charset' => 'utf8'
 	];
 
