@@ -1,6 +1,4 @@
 <?php
-!defined('XDE') && exit('Access Denied');
 return [
 	// 配置项 => 配置值
 ];
-?>

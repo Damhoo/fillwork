@@ -1,4 +1,3 @@
-<?php !defined('XDE') && exit('Access Denied'); ?>
 <!DOCTYPE html>
 <html>
 <head>

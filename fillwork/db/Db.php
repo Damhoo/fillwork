@@ -1,8 +1,6 @@
 <?php
 namespace fillwork\db;
 
-!defined('XDE') && exit('Access Denied');
-
 use PDO;
 use PDOException;
 

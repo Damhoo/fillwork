@@ -1,8 +1,6 @@
 <?php
 namespace fillwork\db;
 
-!defined('XDE') && exit('Access Denied');
-
 use \PDOStatement;
 use fillwork\core\Config;
 
@@ -10,6 +8,7 @@ class Sql{
 	protected $table = null;// 表名
 	protected $pk = 'id';// 默认主键
 	private $filter = '';// where和order拼装后的条件
+	private $field = '';
 	private $param = []; // PDO bindParam()绑定的参数集合
 	public $pdo;
 
@@ -40,6 +39,19 @@ class Sql{
 			$this->filter .= ' WHERE ';
 			$this->filter .= implode(' ', $where);
 			$this->param = $param;
+		}
+
+		return $this;
+	}
+
+	// 查询指定字段
+	// 使用方法$this->field(['id','name','age'])->where([..])->fetch();
+	public function field($field=[]) {
+		if (!empty($field)) {
+			$field = array_map(function($name){return "`$name`";}, $field);
+			$this->field .= implode(',', $field);
+		} else {
+			$this->field = '*';
 		}
 
 		return $this;
@@ -123,7 +135,7 @@ class Sql{
 
 	// 查询一条
 	public function fetch() {
-		$sql = sprintf("SELECT * FROM `%s` %s", $this->table, $this->filter);
+		$sql = sprintf("SELECT %s FROM `%s` %s", $this->field, $this->table, $this->filter);
 		$sth = Db::pdo()->prepare($sql);
 		$sth = $this->formatParam($sth, $this->param);
 		$sth->execute();
@@ -133,7 +145,7 @@ class Sql{
 
 	// 查询所有
 	public function fetchAll() {
-		$sql = sprintf("SELECT * FROM `%s` %s", $this->table, $this->filter);
+		$sql = sprintf("SELECT %s FROM `%s` %s", $this->field, $this->table, $this->filter);
 		$sth = $this->pdo->prepare($sql);
 		$sth = $this->formatParam($sth, $this->param);
 		$sth->execute();

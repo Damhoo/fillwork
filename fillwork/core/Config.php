@@ -1,9 +1,7 @@
 <?php
 namespace fillwork\core;
 
-!defined('XDE') && exit('Access Denied');
-
-class Config{
+final class Config{
 	public static function get($var=null, $value=null) {
 		static $config = [];
 		// 如果是数组，则合并

@@ -1,5 +1,4 @@
 <?php
-!defined('XDE') && exit('Access Denied');
 return [
 	// 默认时区
 	'DEFAULT_TIMEZONE' => 'PRC',
@@ -49,5 +48,22 @@ return [
 
 	// ERROR
 	'ERROR_URL' => '',
-	'ERROR_MSG' => '网站出错了，请稍候再试...'
+	'ERROR_MSG' => '网站出错了，请稍候再试...',
+
+	// 模板引擎
+	'TMPL_ENGINE' => true,
+	'TMPL_EXT' => '.php',
+	'TMPL_ENGINE_TYPE' => 'Twig',
+    'TMPL_ENGINE_CONFIG' => [
+    	'debug' => true,
+    	'auto_reload' => true,
+    	'extension' => '.twig',
+		'caching' => true,
+		'cache' => false,
+		'template_dir' => APP_VIEW_PATH,
+		'compile_dir' => ROOT_PATH.'/temp/compile',
+		'cache_dir' => ROOT_PATH.'/temp/cache',
+		'left_delimiter' => '{',
+		'right_delimiter' => '}'
+	],
 ];

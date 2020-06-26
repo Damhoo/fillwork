@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>用户管理</title>
+</head>
+<body>
+	<style type="text/css">
+		table,tr,th,td{border-color: #efefef;}
+	</style>
+<table cellspacing="0" border="1" cellpadding="5">
+	<tr>
+		<th>ID</th>
+		<th>User</th>
+		<th>Name</th>
+		<th>Hash</th>
+	</tr>
+	{% for user in users %}
+	<tr>
+		<td>{{user.id}}</td>
+		<td>{{user.user}}</td>
+		<td>{{user.name}}</td>
+		<td>{{user.passwd}}</td>
+	</tr>
+	{% endfor %}
+</table>
+</body>
+</html>

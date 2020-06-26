@@ -1,8 +1,6 @@
 <?php
 namespace fillwork\core;
 
-!defined('XDE') && exit('Access Denied');
-
 class Tool{
 	public static function dump($var) {
 		if (is_string($var)) {

@@ -1,8 +1,6 @@
 <?php
 namespace app\controller;
 
-!defined('XDE') && exit('Access Denied');
-
 use fillwork\core\Controller;
 
 class Index extends Controller{

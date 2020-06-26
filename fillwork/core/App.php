@@ -1,11 +1,6 @@
 <?php
 namespace fillwork\core;
 
-!defined('XDE') && exit('Access Denied');
-
-use fillwork\core\Tool;
-use Exception;
-
 final class App{
 	// 保存URL参数
 	private static $param = [];
@@ -104,7 +99,7 @@ final class App{
 
 	// 默认设置
 	private static function _set_outlink() {
-		$protocol = preg_match('/https/i', $_SERVER['SERVER_PROTOCOL']) ? 'https://' : 'http://';
+		$protocol = preg_match('/https/i', $_SERVER['SERVER_PROTOCOL'])?'https://':'http://';
 		$path = $protocol.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'];
 		define('__APP__', $path);
 		define('__ROOT__', dirname($path));

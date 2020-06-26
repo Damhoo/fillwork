@@ -1,8 +1,6 @@
 <?php
 namespace fillwork;
 
-!defined('XDE') && exit('Access Denied');
-
 use fillwork\core\App;
 
 final class Fillphp{
@@ -72,8 +70,12 @@ final class Fillphp{
 		}
 		$errFile = APP_VIEW_PATH.'/common/error.php';
 		$sucFile = APP_VIEW_PATH.'/common/success.php';
+		$headerFile = APP_VIEW_PATH.'/common/header.php';
+		$footerFile = APP_VIEW_PATH.'/common/footer.php';
 		is_file($errFile) || copy(TPL_PATH.'/error.php', $errFile);
 		is_file($sucFile) || copy(TPL_PATH.'/success.php', $sucFile);
+		is_file($headerFile) || copy(TPL_PATH.'/header.php', $headerFile);
+		is_file($footerFile) || copy(TPL_PATH.'/footer.php', $footerFile);
 	}
 
 	// 引入核心类文件
@@ -86,11 +88,11 @@ final class Fillphp{
 	    } else if (strpos($className, '\\') !== false) {
 	    	// 引入应用类文件
 	        $file = ROOT_PATH.'/'.str_replace('\\', '/', $className).'.php';
-	        if(!is_file($file)){return;};
+	        if(!is_file($file)){return false;};
 	    } else {
-	        return;
+	        return false;
 	    }
-	    include $file;
+	    include_once $file;
 	}
 
 
@@ -100,7 +102,6 @@ final class Fillphp{
         	'fillwork\core\Tool' => CORE_PATH.'/Tool.php',
         	'fillwork\core\Config' => CORE_PATH.'/Config.php',
         	'fillwork\db\Db' => DB_PATH.'/Db.php',
-        	// 'fillwork\data\Db' => DATA_PATH.'/Db.php',
         	'fillwork\db\Sql' => DB_PATH.'/Sql.php',
         	'fillwork\core\Model' => CORE_PATH.'/Model.php',
         	'fillwork\core\App' => CORE_PATH.'/App.php'

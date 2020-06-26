@@ -1,0 +1,9 @@
+{
+    "config": {
+        "secure-http": false
+    },
+    "require": {
+        "twig/twig": "^1.0",
+        "smarty/smarty": "^3.1"
+    }
+}

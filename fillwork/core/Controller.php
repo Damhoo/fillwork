@@ -1,8 +1,6 @@
 <?php
 namespace fillwork\core;
 
-!defined('XDE') && exit('Access Denied');
-
 class Controller {
 	protected $_controller = null;
 	protected $_action = null;
@@ -35,5 +33,17 @@ class Controller {
 	public function error($msg, $url='', $time=3) {
 		$url = ($url != '') ? 'location.href="'.$url.'"' : 'history.go(-1)';
 		include APP_VIEW_PATH.'/common/error.php';
+	}
+
+	// 是否为POST提交
+	public function isPost() {
+		return ('POST' != $_SERVER['REQUEST_METHOD']) ? false : true;
+	}
+
+	// 是否为ajax提交
+	public function isAjax() {
+		// if (condition) {
+		// 	# code...
+		// }
 	}
 }
