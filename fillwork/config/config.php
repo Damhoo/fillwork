@@ -29,10 +29,10 @@ return [
 		'HOST' => 'localhost',
 		'PORT' => '3306',
 		'USER' => 'root',
-		'PASSWORD' => '',
-		'DBNAME' => '',
+		'PASSWORD' => 'root',
+		'DBNAME' => 'help',
 		'CHARSET' => 'utf8',
-		'PREFIX' => ''
+		'PREFIX' => 'fw_'
 	],
 
 	// 验证码参数
@@ -59,11 +59,13 @@ return [
     	'auto_reload' => true,
     	'extension' => '.twig',
 		'caching' => true,
-		'cache' => false,
 		'template_dir' => APP_VIEW_PATH,
 		'compile_dir' => ROOT_PATH.'/temp/compile',
-		'cache_dir' => ROOT_PATH.'/temp/cache',
+		'cache' => ROOT_PATH.'/temp/cache',
 		'left_delimiter' => '{',
 		'right_delimiter' => '}'
 	],
+
+	'GRAPH_WIDTH' => '350',
+	'GRAPH_HEIGHT' => '250',
 ];

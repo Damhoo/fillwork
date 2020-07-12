@@ -12,6 +12,6 @@ class Item extends Model {
 	}
 
 	public function all() {
-		return $this->field(['id','user','name','passwd'])->order(['id desc'])->fetchAll();
+		return $this->field(['id','user','name','passwd','u_right'])->order(['id desc'])->fetchAll();
 	}
 }

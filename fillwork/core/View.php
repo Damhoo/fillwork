@@ -1,6 +1,8 @@
 <?php
 namespace fillwork\core;
 
+use fillwork\util\TwigView;
+
 class View extends TwigView{
 	protected $_controller = null;
 	protected $_action = null;

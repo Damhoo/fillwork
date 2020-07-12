@@ -34,6 +34,13 @@ location ~ \.php(.*)$ {
 }
 ```
 
+### 安装扩展
+```
+composer require PHPOffice/PhpSpreadsheet
+composer require smarty/smarty
+composer require twig/twig
+```
+
 ### 结束
 
 到此，你浏览器即可正常访问网站了

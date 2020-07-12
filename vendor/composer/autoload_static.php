@@ -19,6 +19,16 @@ class ComposerStaticInite57e912b13330241169ff496fb66e9f8
         array (
             'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
+        'A' => 
+        array (
+            'Amenadiel\\JpGraph\\Util\\' => 23,
+            'Amenadiel\\JpGraph\\Themes\\' => 25,
+            'Amenadiel\\JpGraph\\Text\\' => 23,
+            'Amenadiel\\JpGraph\\Plot\\' => 23,
+            'Amenadiel\\JpGraph\\Image\\' => 24,
+            'Amenadiel\\JpGraph\\Graph\\' => 24,
+            'Amenadiel\\JpGraph\\' => 18,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -30,6 +40,34 @@ class ComposerStaticInite57e912b13330241169ff496fb66e9f8
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Amenadiel\\JpGraph\\Util\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amenadiel/jpgraph/src/util',
+        ),
+        'Amenadiel\\JpGraph\\Themes\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amenadiel/jpgraph/src/themes',
+        ),
+        'Amenadiel\\JpGraph\\Text\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amenadiel/jpgraph/src/text',
+        ),
+        'Amenadiel\\JpGraph\\Plot\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amenadiel/jpgraph/src/plot',
+        ),
+        'Amenadiel\\JpGraph\\Image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amenadiel/jpgraph/src/image',
+        ),
+        'Amenadiel\\JpGraph\\Graph\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amenadiel/jpgraph/src/graph',
+        ),
+        'Amenadiel\\JpGraph\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amenadiel/jpgraph/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -38,6 +76,13 @@ class ComposerStaticInite57e912b13330241169ff496fb66e9f8
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+        'P' => 
+        array (
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
             ),
         ),
     );

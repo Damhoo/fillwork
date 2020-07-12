@@ -5,7 +5,7 @@ class Tool{
 	public static function dump($var) {
 		if (is_string($var)) {
 			echo $var;
-		} else if (is_array($var) && !empty($var)) {
+		} else if ((is_array($var) && !empty($var)) || is_object($var)) {
 			echo '<pre>';print_r($var);echo '</pre>';
 		} else {
 			var_dump($var);
@@ -65,5 +65,19 @@ class Tool{
 			echo "<meta http-equiv='Refresh' content='{$time};url={$url}'>";
 			if ($time) die($msg);
 		}
+	}
+
+	// each
+	public static function _each(&$arr){
+	   $_tmp = [];
+	   $key = key($arr);
+	   if($key !== null){
+	       next($arr); 
+	       $_tmp[1] = $_tmp['value'] = $arr[$key];
+	       $_tmp[0] = $_tmp['key'] = $key;
+	   }else{
+	       $_tmp = false;
+	   }
+	   return $_tmp;
 	}
 }
