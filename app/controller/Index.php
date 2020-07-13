@@ -1,15 +1,11 @@
 <?php
 namespace app\controller;
 
-use fillwork\core\Controller;
 use app\model\Item;
 use fillwork\core\Tool;
 use fillwork\util\GraphUtil;
-use Amenadiel\JpGraph\Graph;
-use Amenadiel\JpGraph\Plot;
 
-
-class Index extends Controller{
+class Index extends Base{
 	public function index() {
 		$this->render();
 	}
