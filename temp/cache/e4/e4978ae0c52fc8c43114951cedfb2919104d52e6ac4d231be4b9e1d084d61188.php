@@ -18,34 +18,43 @@ class __TwigTemplate_be2360d5e6c08e5cdb5fb9f7e2d7017e9d25a4a7dcd357ee5a30234d941
     {
         parent::__construct($env);
 
-        $this->parent = false;
-
         $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'body' => [$this, 'block_body'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "layout.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
-        // line 1
-        echo "<!DOCTYPE html>
-<html>
-<head>
-<meta charset=\"utf-8\">
-<title>";
+        $this->parent = $this->loadTemplate("layout.twig", "index_index.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 2
+    public function block_title($context, array $blocks = [])
+    {
+        echo "后台首页";
+    }
+
+    // line 3
+    public function block_body($context, array $blocks = [])
+    {
+        // line 4
+        echo "<h1>Hello</h1>
+<h1>";
         // line 5
-        echo twig_escape_filter($this->env, (isset($context["title"]) ? $context["title"] : null), "html", null, true);
-        echo "</title>
-</head>
-<body>
-<style type=\"text/css\">
-\ttable,tr,th,td{border-color: #efefef;}
-</style>
-<h1>Hello</h1>
+        echo twig_escape_filter($this->env, (isset($context["__APP__"]) ? $context["__APP__"] : null), "html", null, true);
+        echo "</h1>
 <img src=\"/Index/pie\">
 <img src=\"/Index/tel\">
 <img src=\"/Index/bar\">
-</body>
-</html>";
+";
     }
 
     public function getTemplateName()
@@ -60,7 +69,7 @@ class __TwigTemplate_be2360d5e6c08e5cdb5fb9f7e2d7017e9d25a4a7dcd357ee5a30234d941
 
     public function getDebugInfo()
     {
-        return array (  36 => 5,  30 => 1,);
+        return array (  52 => 5,  49 => 4,  46 => 3,  40 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -73,21 +82,14 @@ class __TwigTemplate_be2360d5e6c08e5cdb5fb9f7e2d7017e9d25a4a7dcd357ee5a30234d941
 
     public function getSourceContext()
     {
-        return new Source("<!DOCTYPE html>
-<html>
-<head>
-<meta charset=\"utf-8\">
-<title>{{title}}</title>
-</head>
-<body>
-<style type=\"text/css\">
-\ttable,tr,th,td{border-color: #efefef;}
-</style>
+        return new Source("{% extends \"layout.twig\" %}
+{% block title %}后台首页{% endblock %}
+{% block body %}
 <h1>Hello</h1>
+<h1>{{__APP__}}</h1>
 <img src=\"/Index/pie\">
 <img src=\"/Index/tel\">
 <img src=\"/Index/bar\">
-</body>
-</html>", "index_index.twig", "D:\\SOFT\\phpstudy_pro\\WWW\\lab\\app\\view\\index_index.twig");
+{% endblock %}", "index_index.twig", "D:\\SOFT\\phpstudy_pro\\WWW\\lab\\app\\view\\index_index.twig");
     }
 }
