@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>{{title}}</title>
-</head>
-<body>
-<style type="text/css">
-	table,tr,th,td{border-color: #efefef;}
-</style>
+{% extends "layout.twig" %}
+{% block title %}后台首页{% endblock %}
+{% block body %}
 <h1>Hello</h1>
+<h1>{{__APP__}}</h1>
 <img src="/Index/pie">
 <img src="/Index/tel">
 <img src="/Index/bar">
-</body>
-</html>
+{% endblock %}
