@@ -5,15 +5,16 @@ use \PDOStatement;
 use fillwork\core\Config;
 
 class Sql{
-	protected $table = null;// 表名
+	protected $table = 'log';// 表名
 	protected $pk = 'id';// 默认主键
 	private $filter = '';// where和order拼装后的条件
 	private $field = '';
 	private $param = []; // PDO bindParam()绑定的参数集合
 	public $pdo;
+	static public $link;
 
 	public function __construct() {
-		$this->pdo = Db::pdo([
+		self::$link = $this->pdo = Db::pdo([
 			'type' => Config::get('DATABASE')['TYPE'],
 			'port' => Config::get('DATABASE')['PORT'],
 			'host' => Config::get('DATABASE')['HOST'],
@@ -114,7 +115,7 @@ class Sql{
 		$names = [];
 		foreach ($data as $key => $value) {
 			$fields[] = sprintf("`%s`", $key);
-			$names[] = sprintf("`%s`", $key);
+			$names[] = sprintf(":%s", $key);
 		}
 
 		$field = implode(',', $fields);
@@ -154,14 +155,14 @@ class Sql{
 	}
 
 	// 新增数据
-	public function add($data) {
+	public function insert($data) {
 		$sql = sprintf("INSERT INTO `%s` %s", $this->table, $this->formatInsert($data));
 		$sth = $this->pdo->prepare($sql);
 		$sth = $this->formatParam($sth, $data);
 		$sth = $this->formatParam($sth, $this->param);
 		$sth->execute();
 
-		return $sth->lastInsertId();
+		return $sth->rowCount();
 	}
 
 	// 更新数据

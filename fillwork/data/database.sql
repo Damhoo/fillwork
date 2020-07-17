@@ -14,4 +14,15 @@ CREATE TABLE `admin`(
 	login_time int unsigned not null default 0,
 	delete_time int unsigned not null default 0,
 	deleted tinyint unsigned not null default 0
-)engine=myisam default charset UTF8; 
+)engine=myisam default charset UTF8;
+
+create table log(
+	id int unsigned not null primary key auto_increment,
+	handle varchar(24) not null default '',
+	remark varchar(255) not null default '',
+	user varchar(24) not null default '',
+	ip char(15) not null default '0.0.0.0',
+	add_time int unsigned not null default 0,
+	KEY `user` (`user`),
+	KEY `add_time` (`add_time`)
+)engine=myisam default charset utf8;

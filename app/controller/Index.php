@@ -4,9 +4,15 @@ namespace app\controller;
 use app\model\Item;
 use fillwork\core\Tool;
 use fillwork\util\GraphUtil;
+use fillwork\core\Log;
 
 class Index extends Base{
 	public function index() {
+		var_dump(Log::write([
+			'user' => 'admin',
+			'msg' => '删除了张三患者',
+			'handle' => 'add',
+		], 'Db'));die;
 		$this->render();
 	}
 
