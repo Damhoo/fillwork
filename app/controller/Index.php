@@ -8,11 +8,12 @@ use fillwork\core\Log;
 
 class Index extends Base{
 	public function index() {
-		var_dump(Log::write([
+		$res = Log::write([
 			'user' => 'admin',
 			'msg' => '删除了张三患者',
 			'handle' => 'add',
-		], 'Db'));die;
+		], 'Db');
+		echo $res;die;
 		$this->render();
 	}
 

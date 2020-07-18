@@ -15,9 +15,19 @@ class Tool{
 	// halt函数
 	public static function halt($error, $level='ERROR', $type=3, $dest='') {
 		if (is_array($error)) {
-			Log::write($error['message'], $level, $type, $dest);
+			Log::write([
+				'message' => $error['message'], 
+				'level' => $level, 
+				'type' => $type, 
+				'dest' => $dest
+			]);
 		} else {
-			Log::write($error, $level, $type, $dest);
+			Log::write([
+				'message' => $error, 
+				'level' => $level, 
+				'type' => $type, 
+				'dest' => $dest
+			]);
 		}
 
 		$e = [];

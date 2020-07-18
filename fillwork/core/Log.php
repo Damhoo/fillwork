@@ -7,10 +7,9 @@ namespace fillwork\core;
 
 use fillwork\db\Sql;
 
-class Log extends Model {
-	//static protected $table = 'log';
+class Log {
 	static private $info = [
-		'msg' => '出错了！',
+		'message' => '出错了！',
 		'level' => 'ERROR',
 		'type' => 3,
 		'dest' => null
@@ -23,7 +22,7 @@ class Log extends Model {
 		'add' => "添加操作"
 	];
 
-	public function __construct(){}
+	final private function __construct(){}
 	final private function __clone(){}
 
 	/**
@@ -35,18 +34,18 @@ class Log extends Model {
 			if(!Config::get('LOG_START')) return;
 			$logPath = Config::get('LOG_PATH');
 			is_null(self::$info['dest']) && $dest = $logPath.'/'.date('Y_m_d').'.log';
-			$msg = sprintf('[datetime]: %s', self::$info['msg']);
+			$msg = sprintf('[datetime]: %s', self::$info['message']);
 			is_dir($logPath)&&error_log($msg, self::$info['type'], $dest);
 		} else {
 			// 数据库记录
 			$ip = isset($_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:$_SERVER['X-REAL-IP'];
-			$msg = sprintf('%s 在 %s %s', self::$info['user'], date('Y-m-d H:i', time()), self::$info['msg']);
-			(new Sql)->insert([
+			$msg = sprintf('%s 在 %s %s', self::$info['user'], date('Y-m-d H:i', time()), self::$info['message']);
+			return (new Sql)->name('log')->insert([
 				'handle' => self::$remark[self::$info['handle']],
 				'remark' => $msg,
 				'user' => self::$info['user'],
 				'ip' => $ip,
-				'add_time' => time()
+				'create_time' => time()
 			]);
 		}
 	}
