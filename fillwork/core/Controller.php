@@ -5,9 +5,11 @@ class Controller {
 	protected $_controller = null;
 	protected $_action = null;
 	protected $_view = null;
+	protected $request = null;
 
 	// 初始化参数并实例化对应视图模型
 	public function __construct($controller, $action) {
+		$this->request = new Request();
 		$this->_controller = $controller;
 		$this->_action = $action;
 		$this->_view = new View($controller, $action);

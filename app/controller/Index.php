@@ -10,7 +10,7 @@ class Index extends Base{
 	public function index() {
 		$res = Log::write([
 			'user' => 'admin',
-			'msg' => '删除了张三患者',
+			'message' => '删除了张三患者',
 			'handle' => 'add',
 		], 'Db');
 		echo $res;die;

@@ -1,9 +1,9 @@
 <?php
 namespace fillwork\core;
 
-use fillwork\db\Sql;
+use fillwork\db\Query;
 
-class Model extends Sql{
+class Model extends Query {
 
 	protected $model = null;
 

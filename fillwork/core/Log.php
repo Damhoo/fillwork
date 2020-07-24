@@ -5,7 +5,7 @@
  */
 namespace fillwork\core;
 
-use fillwork\db\Sql;
+use fillwork\db\Db;
 
 class Log {
 	static private $info = [
@@ -40,13 +40,14 @@ class Log {
 			// 数据库记录
 			$ip = isset($_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:$_SERVER['X-REAL-IP'];
 			$msg = sprintf('%s 在 %s %s', self::$info['user'], date('Y-m-d H:i', time()), self::$info['message']);
-			return (new Sql)->name('log')->insert([
+			var_dump(Db::name('log')->insert([
 				'handle' => self::$remark[self::$info['handle']],
 				'remark' => $msg,
 				'user' => self::$info['user'],
 				'ip' => $ip,
 				'create_time' => time()
-			]);
+			]));
+			
 		}
 	}
 
