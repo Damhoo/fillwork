@@ -18,13 +18,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/HuasoFoundries/jpgraph/zipball/03aead6c6a04e33cda09242369ffa072db390af8",
                 "reference": "03aead6c6a04e33cda09242369ffa072db390af8",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "ext-gd": "*",
@@ -69,13 +63,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/1441011fb7ecdd8cc689878f54f8b58a6805f870",
                 "reference": "1441011fb7ecdd8cc689878f54f8b58a6805f870",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
@@ -128,29 +116,23 @@
         },
         {
             "name": "smarty/smarty",
-            "version": "v3.1.36",
+            "version": "v3.1.43",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "fd148f7ade295014fff77f89ee3d5b20d9d55451"
+                "reference": "273f7e00fec034f6d61112552e9caf08d19565b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/fd148f7ade295014fff77f89ee3d5b20d9d55451",
-                "reference": "fd148f7ade295014fff77f89ee3d5b20d9d55451",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/273f7e00fec034f6d61112552e9caf08d19565b7",
+                "reference": "273f7e00fec034f6d61112552e9caf08d19565b7",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "6.4.1",
+                "phpunit/phpunit": "^7.5 || ^6.5 || ^5.7 || ^4.8",
                 "smarty/smarty-lexer": "^3.1"
             },
             "type": "library",
@@ -187,7 +169,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2020-04-14T14:44:26+00:00"
+            "time": "2022-01-10T09:52:40+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -201,13 +183,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/2edd75b8b35d62fd3eeabba73b26b8f1f60ce13d",
                 "reference": "2edd75b8b35d62fd3eeabba73b26b8f1f60ce13d",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
@@ -283,13 +259,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/twigphp/Twig/zipball/21707d6ebd05476854805e4f91b836531941bcd4",
                 "reference": "21707d6ebd05476854805e4f91b836531941bcd4",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0",
